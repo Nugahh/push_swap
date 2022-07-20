@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/05/07 10:59:13 by fwong             #+#    #+#             */
+/*   Updated: 2022/05/25 17:56:08 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/ft_printf.h"
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if ((unsigned char)*s == (unsigned char)c)
+		{
+			return ((char *)(s));
+		}
+		s++;
+	}
+	if (*s == c)
+		return ((char *)s);
+	return (NULL);
+}
+/* 
+int main()
+{
+	char a[50] = "bonjour";	
 
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
-
-#endif
+	printf("%s", ft_strchr(a, 'j'));
+} */

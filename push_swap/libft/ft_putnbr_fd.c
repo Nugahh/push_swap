@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/05/22 20:10:52 by fwong             #+#    #+#             */
+/*   Updated: 2022/05/25 17:22:53 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/ft_printf.h"
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	a;
+	long	b;
 
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
-
-#endif
+	a = n;
+	if (a < 0)
+	{
+		write(fd, "-", 1);
+		a *= -1;
+	}
+	if (a >= 0 && a <= 9)
+	{
+		b = '0' + a;
+		write(fd, &b, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(a / 10, fd);
+		ft_putnbr_fd(a % 10, fd);
+	}
+}
+/* 
+int main()
+{
+	ft_putnbr_fd(-546, 1);
+} */

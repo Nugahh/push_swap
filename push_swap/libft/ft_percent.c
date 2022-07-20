@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_percent.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/06/07 17:41:27 by fwong             #+#    #+#             */
+/*   Updated: 2022/07/14 15:54:57 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include "libft/ft_printf.h"
-
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
-
-#endif
+int	ft_percent(void)
+{
+	write (1, "%", 1);
+	return (1);
+}

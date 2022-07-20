@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/05/07 11:35:24 by fwong             #+#    #+#             */
+/*   Updated: 2022/05/25 18:06:08 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/ft_printf.h"
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*temp;
 
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
+	temp = NULL;
+	if (!s)
+		return (temp);
+	if (c == 0)
+		return ((char *)(s + ft_strlen(s)));
+	while (*s)
+	{
+		if (*s == (char)c)
+			temp = (char *)s;
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *)s);
+	return (temp);
+}
+/* 
+int main()
+{
+	char a[50] = "bonjjjjjjour";	
 
-#endif
+	printf("%s", ft_strrchr(a, 'j'));
+} */

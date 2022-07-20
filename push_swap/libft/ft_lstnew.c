@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/05/27 03:46:02 by fwong             #+#    #+#             */
+/*   Updated: 2022/06/04 18:09:05 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/ft_printf.h"
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*dest;
 
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
-
-#endif
+	dest = malloc(sizeof(t_list));
+	if (!dest)
+		return (NULL);
+	dest->content = content;
+	dest->next = NULL;
+	return (dest);
+}

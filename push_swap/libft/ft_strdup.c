@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/05/07 15:44:13 by fwong             #+#    #+#             */
+/*   Updated: 2022/05/25 17:27:22 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/ft_printf.h"
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	char	*copy;
 
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
-
-#endif
+	len = ft_strlen(s) + 1;
+	copy = malloc(len);
+	if (!copy)
+		return (NULL);
+	ft_memcpy(copy, s, len);
+	return (copy);
+}
+/* 
+int main() 
+{
+   char str[] = "Kelly&Genny";
+   char *result;
+   result = ft_strdup(str);
+   printf("The string : %s\n", result);
+   return 0;
+} */

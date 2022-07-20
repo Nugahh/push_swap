@@ -1,23 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/05/22 18:16:38 by fwong             #+#    #+#             */
+/*   Updated: 2022/05/25 17:23:03 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/ft_printf.h"
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	int		i;
 
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, s + i);
+		i++;
+	}
+}
+/* 
+void	f_iter(unsigned int i, char *c)
+{
+	while (c[i])
+	{
+		c[i] += 1;
+		i++;
+	}
+}
 
-#endif
+#include <stdio.h>
+
+int main()
+{
+    char str1[] = "abc";
+    ft_striteri(str1, *f_iter);
+    printf("%s\n", str1);
+} */

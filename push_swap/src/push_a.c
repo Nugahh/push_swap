@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/17 17:20:28 by fwong            ###   ########.fr       */
+/*   Created: 2022/07/14 20:01:07 by fwong             #+#    #+#             */
+/*   Updated: 2022/07/17 17:28:53 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include "libft/ft_printf.h"
+void	push_a(int *sa, int *sb, int size)
+{
+	int	i;
 
-void	ft_swap(int *a, int *b);
-void rotate_ra(int *stack, int size);
-void reverse_rotate_ra(int *stack, int size);
-void	push_a(int *sa, int *sb, int size);
+	i = 0;
+	if (sb == 0)
+		return;
+	
+	ft_swap(&sa[0], &sb[0]);
+}
 
-#endif
+int main()
+{
+	int stackA[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int stackB[10] = {4, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int	i;
+
+	i = 0;
+	push_a(stackA, stackB, 10);
+	while (i < 10)
+	{
+	printf("%d\n", stackA[i]);
+	i++;
+	}
+}
