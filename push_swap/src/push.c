@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 20:01:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/21 15:51:43 by fwong            ###   ########.fr       */
+/*   Updated: 2022/07/24 22:05:53 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	push_b(int *sa, int *sb, int size)
 	}
 }
 
-int main()
+/* int main()
 {
 	int stackA[6] = {2, 1, 3, 6, 5, 8};
 	int stackB[6] = {};
@@ -76,4 +76,4 @@ int main()
 		printf("stack B[%d]: %d\n", i, stackB[i]);
 		i++;
 	}
-}
+} */

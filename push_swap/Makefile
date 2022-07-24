@@ -6,13 +6,13 @@
 #    By: fwong <fwong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:53:23 by fwong             #+#    #+#              #
-#    Updated: 2022/07/17 17:20:11 by fwong            ###   ########.fr        #
+#    Updated: 2022/07/25 01:37:48 by fwong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap.a
 
-SRCS	= push_swap.c src/rotate.c src/swap.c src/reverse_rotate.c src/push_a.c
+SRCS	= push_swap.c src/rotate.c src/swap.c src/reverse_rotate.c src/push.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -45,7 +45,7 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 
-	make clean -C libft
+	make fclean -C libft
 
 test: ${OBJS}
 	make -C libft
