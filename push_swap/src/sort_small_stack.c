@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:04:31 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/01 21:50:44 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/01 22:03:42 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	ft_find_min(t_data *data)
 		{
 			if (data->stack_a[i] < data->stack_a[j])
 				min += 1;
-				printf("%d", min);
+				// printf("%d", min);
 				j++;
 		}
-		printf("\n");
+		// printf("\n");
 		if (min != data->len_a - 1)
 			min = 0;
 		else
@@ -71,6 +71,8 @@ int main()
 	truc.stack_a[3] = 5;
 	truc.stack_a[4] = 1;
 	
+	truc.len_b = 5;
+	truc.stack_b = malloc(sizeof(int) * truc.len_b);
 	while (i < truc.len_a)
 	{
 		printf("Stack A: %d\n", truc.stack_a[i]);
@@ -80,12 +82,20 @@ int main()
 	printf("\n");
 	printf("Min is: %d\n", ft_find_min(&truc));
 	push_b(&truc);
+	rotate_ra(truc.stack_a, 5);
+	rotate_ra(truc.stack_a, 5);
+	rotate_ra(truc.stack_a, 5);
+	rotate_ra(truc.stack_a, 5);
+	printf("\n");
 
+	i = 0;
 	while (i < truc.len_a)
 	{
 		printf("Stack A: %d\n", truc.stack_a[i]);
 		i++;
 	}
+	ft_delete_top_stack_a(&truc);
+	printf("\n");
 	printf("\n");
 	printf("\n");
 	printf("Min is: %d\n", ft_find_min(&truc));

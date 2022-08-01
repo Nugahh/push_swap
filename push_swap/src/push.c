@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 20:01:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/01 21:52:08 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/01 22:04:04 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	push_b(t_data *data)
 	free(data->stack_b);
 	data->stack_b = new_stack_b;
 	data->len_b++;
-	// ft_delete_top_stack_a(data);
+	ft_delete_top_stack_a(data);
 }
 
 void	ft_delete_top_stack_a(t_data *data)
