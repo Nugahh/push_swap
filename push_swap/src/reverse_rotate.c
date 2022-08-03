@@ -19,7 +19,7 @@ void reverse_rotate_ra(int *stack, int size)
 		ft_swap(&stack[size - 1], &stack[size - 2]);
 		size--;
 	}
-	ft_putstr_fd("rra", 1);
+	ft_putstr_fd("rra\n", 1);
 }
 
 void reverse_rotate_rb(int *stack, int size)
@@ -29,7 +29,7 @@ void reverse_rotate_rb(int *stack, int size)
 		ft_swap(&stack[size - 1], &stack[size - 2]);
 		size--;
 	}
-	ft_putstr_fd("rrb", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void reverse_rotate_rrr(int *ra, int *rb, int size)
@@ -48,16 +48,16 @@ void reverse_rotate_rrr(int *ra, int *rb, int size)
 		ft_swap(&rb[i], &rb[i - 1]);
 		i--;
 	}
-	ft_putstr_fd("rrr", 1);
+	ft_putstr_fd("rrr\n", 1);
 }
-/* 
-int main()
+
+/* int main()
 {
-	int stack[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int stack[10] = {2, 3 ,1};
 	int	i;
 
 	i = 0;
-	reverse_rotate_ra(stack, 10);
+	reverse_rotate_ra(stack, 3);
 	while (i < 10)
 	{
 	printf("%d\n", stack[i]);

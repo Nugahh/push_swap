@@ -22,7 +22,7 @@ void rotate_ra(int *stack, int size)
 		ft_swap(&stack[i], &stack[i + 1]);
 		i++;
 	}
-	ft_putstr_fd("ra", 1);
+	ft_putstr_fd("ra\n", 1);
 }
 
 void rotate_rb(int *stack, int size)
@@ -35,7 +35,7 @@ void rotate_rb(int *stack, int size)
 		ft_swap(&stack[i], &stack[i + 1]);
 		i++;
 	}
-	ft_putstr_fd("rb", 1);
+	ft_putstr_fd("rb\n", 1);
 }
 
 /* int main()

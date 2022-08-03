@@ -26,7 +26,7 @@ void	swap_sa(int *stack, int len)
 	if 	(len <= 1)
 		return;
 	ft_swap(&stack[0], &stack[1]);
-	ft_putstr_fd("sa", 1);
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	swap_sb(int *stack, int len)
@@ -34,7 +34,7 @@ void	swap_sb(int *stack, int len)
 	if 	(len <= 1)
 		return;
 	ft_swap(&stack[0], &stack[1]);
-	ft_putstr_fd("sb", 1);
+	ft_putstr_fd("sb\n", 1);
 }
 
 void	swap_ss(int* sa, int* sb, int len)
@@ -43,5 +43,5 @@ void	swap_ss(int* sa, int* sb, int len)
 		return;
 	ft_swap(&sa[0], &sa[1]);
 	ft_swap(&sb[0], &sb[1]);
-	ft_putstr_fd("ss", 1);
+	ft_putstr_fd("ss\n", 1);
 }

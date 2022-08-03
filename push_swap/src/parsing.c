@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/01 17:46:01 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/03 01:46:43 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,6 @@ int	ft_check_int_max(int len, char **argv)
 		i++;
 	}
 	return (1);
-}
-int	ft_isdigit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
 }
 
 int	ft_check_duplicate(int *stack, int len)
@@ -70,7 +64,7 @@ int	ft_parsing(char **argv, int len)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (j == 0 && argv[i][j] == '-')
+			if (argv[i][0] == '-')
 				j++;
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 				return (0);
