@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:04:31 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/03 02:15:59 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/03 17:56:03 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort_5(t_data *data)
 	push_a(data);
 }
 
-int	ft_sort_small_stack(t_data *data)
+int	sort_small_stack(t_data *data)
 {
 	if (data->len_a == 2)
 		sort_2(data);

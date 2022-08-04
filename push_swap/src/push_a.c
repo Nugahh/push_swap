@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 20:01:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/03 01:59:12 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/03 23:19:00 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	push_a(t_data *data)
 	ft_putstr_fd("pa\n", 1);
 }
 
-int main()
+/* int main()
 {
 	struct s_data truc;
 	int	i = 0;
@@ -93,4 +93,4 @@ int main()
 		printf("Stack B: %d\n", truc.stack_b[i]);
 		i++;
 	}
-}
+} */
