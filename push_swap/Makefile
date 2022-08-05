@@ -15,7 +15,8 @@ NAME	= push_swap.a
 SRCS	= 	push_swap.c \
 			src/rotate.c src/swap.c src/reverse_rotate.c src/push_a.c \
 			src/push_b.c src/sort_small_stack.c src/utils.c \
-			src/sort_big_stack.c
+			src/sort_big_stack.c src/sort_for_index.c src/sort.c \
+			src/parsing.c
 
 OBJS	= ${SRCS:.c=.o}
 

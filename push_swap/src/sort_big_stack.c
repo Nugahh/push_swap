@@ -15,11 +15,11 @@
 int ft_get_max_bits(t_data *data)
 {
 	int max_bits;
-	int temp_len;
+	int size;
 
 	max_bits = 1;
-	temp_len = data->len_a;
-	while ((temp_len /= 2) != 0)
+	size = data->len_a;
+	while ((size /= 2) != 0)
 		max_bits++;
 	return (max_bits);
 }
@@ -28,44 +28,39 @@ void sort_big_stack(t_data *data)
 {
 	int i;
 	int j;
+	int	size;
 
-	i = -1;
-	while (++i < ft_get_max_bits(data))
+	i = 0;
+	size = data->len_a;
+	ft_replace_stack_by_index(data);
+	while (i < ft_get_max_bits(data))
 	{
 		j = 0;
-		printf("~ i is = %d ~\n\n", i);
-		while (j < data->len_a)
+		while (j < size)
 		{
-			printf("Stack_a[0]: %d\n",data->stack_a[0]);
-			printf("%d >> %d = %d\n", data->stack_a[0], i, (data->stack_a[0] >> i));
-			printf("(%d >> 0) & %d = %d\n", data->stack_a[0] >> i, 1, (data->stack_a[j] >> i & 1));
-			if ((data->stack_a[0] >> i) & 1)
-			{
+			if ((data->stack_a[0] >> i & 1) == 1)
 				rotate_ra(data->stack_a, data->len_a);
-			}
 			else
 				push_b(data);
-			++j;
+			j++;
 		}
-		while (data->len_b)
+		while (data->len_b != 0)
 			push_a(data);
-		printf("\n\n");
+		i++;
 	}
 }
 
-int main()
+/* int main()
 {
 	t_data truc;
 	int i = 0;
-
 	truc.len_a = 6;
 	truc.stack_a = malloc(sizeof(int) * truc.len_a);
-
 	truc.stack_a[0] = 4;
 	truc.stack_a[1] = 5;
 	truc.stack_a[2] = 3;
 	truc.stack_a[3] = 2;
-	truc.stack_a[4] = 1;
+	truc.stack_a[4] = 6;
 	truc.stack_a[5] = 7;
 
 	truc.len_b = 0;
@@ -87,4 +82,4 @@ int main()
 		printf("Stack A: %d\n", truc.stack_a[i]);
 		i++;
 	}
-}
+} */

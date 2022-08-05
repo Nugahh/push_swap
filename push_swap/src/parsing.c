@@ -6,38 +6,38 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/03 01:46:43 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/05 03:01:29 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_fill_stack(int *stack, int len, char **argv)
-
-int	ft_check_int_max(int len, char **argv)
+int ft_check_int_max(char **argv)
 {
-	long	*stack;
-	int	i;
+	int i;
 
-	i = 0;
-	stack = malloc(sizeof(long) * len);
-	if (!stack)
-		return (0);
-	while (i < len)
+	i = 1;
+	while (argv[i])
 	{
-		stack = ft_atoi(argv[i + 1]);
-		if (stack[i] < -2147483648 || stack[i] > 2147483647)
-			return (free(stack), 0);
+		if (ft_strncmp(argv[i], ft_itoa(ft_atoi(argv[i])), 12) != 0)
+			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	ft_check_duplicate(int *stack, int len)
+int ft_check_duplicate(char **argv, int len)
 {
-	int	i;
-	int	j;
+	int *stack;
+	int i;
+	int j;
 
+	i = -1;
+	stack = malloc(sizeof(int) * len);
+	if (!stack)
+		return (0);
+	while (++i < len)
+		stack[i] = ft_atoi(argv[i + 1]);
 	i = 0;
 	while (i < len)
 	{
@@ -45,7 +45,7 @@ int	ft_check_duplicate(int *stack, int len)
 		while (j < len)
 		{
 			if (stack[i] == stack[j])
-				return 0;
+				return (0);
 			j++;
 		}
 		i++;
@@ -53,10 +53,10 @@ int	ft_check_duplicate(int *stack, int len)
 	return (1);
 }
 
-int	ft_parsing(char **argv, int len)
+int ft_parsing(char **argv, int len)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 1;
 	while (i <= len)
@@ -72,7 +72,38 @@ int	ft_parsing(char **argv, int len)
 		}
 		i++;
 	}
-	if (!ft_check_int_max(len, argv))
+	if (!ft_check_int_max(argv))
+		return (0);
+	if (!ft_check_duplicate(argv, len))
 		return (0);
 	return (1);
 }
+
+int ft_init_stack(t_data *data, int argc, char **argv)
+{
+	int i;
+
+	i = 0;
+	data->len_a = argc - 1;
+	if (!ft_parsing(argv, data->len_a))
+		return (0);
+	data->stack_a = malloc(sizeof(int) * data->len_a);
+	if (!data->stack_a)
+		return (0);
+	data->stack_b = malloc(sizeof(int) * data->len_b);
+	if (!data->stack_b)
+		return (0);
+	while (i < data->len_a)
+	{
+		data->stack_a[i] = ft_atoi(argv[i + 1]);
+		i++;
+	}
+	return (1);
+}
+/* 
+int main(int argc, char **argv)
+{
+	if (argc == 1)
+		return (0);
+	printf("Should return 1: %d\n", ft_parsing(argv, argc - 1));
+} */

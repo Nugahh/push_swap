@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 17:53:03 by fwong             #+#    #+#             */
-/*   Updated: 2022/07/14 17:53:04 by fwong            ###   ########.fr       */
+/*   Created: 2022/08/05 01:02:09 by fwong             #+#    #+#             */
+/*   Updated: 2022/08/05 01:02:09 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_sort(t_data *data)
 {
-	t_data	data;
-	int	i;
-
-	i = 0;
-	if (argc <= 1)
-		return (0);
-	if (!ft_init_stack(&data, argc, argv))
-		return (0);
-	ft_sort(&data);
-	while (i < argc)
-	{
-		printf("%d\n", data.stack_a[i]);
-		i++;
-	}
-	return (free(data.stack_a), free(data.stack_b), 0);
+	// ft_sorted_index(data);
+	if (data->len_a <= 5)
+		sort_small_stack(data);
+	else
+		sort_big_stack(data);
+	return (1);
 }
