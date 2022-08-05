@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:04:31 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/04 22:56:36 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/05 18:49:32 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	sort_2(t_data *data)
 
 void	sort_3(t_data *data)
 {
-	 if (data->stack_a[0] > data->stack_a[1]
-        && data->stack_a[0] > data->stack_a[2])
-        rotate_ra(data->stack_a, data->len_a);
-    else if (data->stack_a[1] > data->stack_a[0]
-        && data->stack_a[1] > data->stack_a[2])
-        reverse_rotate_ra(data->stack_a, data->len_a);
-    if (data->stack_a[0] > data->stack_a[1])
-        swap_sa(data->stack_a, data->len_a);
+	if (data->stack_a[0] > data->stack_a[1]
+		&& data->stack_a[0] > data->stack_a[2])
+		rotate_ra(data->stack_a, data->len_a);
+	else if (data->stack_a[1] > data->stack_a[0]
+		&& data->stack_a[1] > data->stack_a[2])
+		reverse_rotate_ra(data->stack_a, data->len_a);
+	if (data->stack_a[0] > data->stack_a[1])
+		swap_sa(data->stack_a, data->len_a);
 }
 
 void	sort_4(t_data *data)
@@ -59,12 +59,12 @@ int	sort_small_stack(t_data *data)
 	return (1);
 }
 
-/* int main()
+int main()
 {
 	t_data truc;
 	int	i = 0;
 	
-	truc.len_a = 5;
+	truc.len_a = 7;
 	truc.stack_a = malloc(sizeof(int) * truc.len_a);
 	
 	truc.stack_a[0] = 5;
@@ -72,8 +72,10 @@ int	sort_small_stack(t_data *data)
 	truc.stack_a[2] = 3;
 	truc.stack_a[3] = 2;
 	truc.stack_a[4] = 1;
+	truc.stack_a[5] = 7;
+	truc.stack_a[6] = 6;
 	
-	truc.len_b = 5;
+	truc.len_b = 7;
 	truc.stack_b = malloc(sizeof(int) * truc.len_b);
 
 	printf("~ Stack A INITIALIZED ~\n\n");
@@ -83,7 +85,7 @@ int	sort_small_stack(t_data *data)
 		i++;
 	}
 	printf("\n");
-	sort_5(&truc);
+	ft_sort(&truc);
 	printf("\n");
 	printf("~ Stack A SORTED ~\n\n");
 	i = 0;
@@ -93,4 +95,4 @@ int	sort_small_stack(t_data *data)
 		i++;
 	}
 }
- */
+

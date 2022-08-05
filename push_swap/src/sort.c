@@ -14,10 +14,15 @@
 
 int	ft_sort(t_data *data)
 {
-	// ft_sorted_index(data);
 	if (data->len_a <= 5)
+	{
 		sort_small_stack(data);
+		printf("caca\n");
+	}
 	else
+	{
 		sort_big_stack(data);
+		printf("caca\n");
+	}
 	return (1);
 }

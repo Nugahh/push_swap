@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void reverse_rotate_ra(int *stack, int size)
+void	reverse_rotate_ra(int *stack, int size)
 {
 	while (size - 1 > 0)
 	{
@@ -22,7 +22,7 @@ void reverse_rotate_ra(int *stack, int size)
 	ft_putstr_fd("rra\n", 1);
 }
 
-void reverse_rotate_rb(int *stack, int size)
+void	reverse_rotate_rb(int *stack, int size)
 {
 	while (size - 1 > 0)
 	{
@@ -32,7 +32,7 @@ void reverse_rotate_rb(int *stack, int size)
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void reverse_rotate_rrr(int *ra, int *rb, int size)
+void	reverse_rotate_rrr(int *ra, int *rb, int size)
 {
 	int	i;
 

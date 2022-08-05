@@ -58,6 +58,5 @@ void	push_b(t_data *data)
 {
 	ft_add_top_stack_b(data);
 	ft_delete_top_stack_a(data);
-
 	ft_putstr_fd("pb\n", 1);
 }

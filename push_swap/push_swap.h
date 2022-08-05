@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/05 02:33:31 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/05 18:08:00 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_data
 void	ft_swap(int *a, int *b);
 void	swap_sa(int *stack, int len);
 void	swap_sb(int *stack, int len);
-void	swap_ss(int* sa, int* sb, int len);
+void	swap_ss(int *sa, int *sb, int len);
 // rotate functions
 void	rotate_ra(int *stack, int size);
 void	rotate_rb(int *stack, int size);
@@ -46,30 +46,29 @@ void	ft_delete_top_stack_a(t_data *data);
 void	ft_delete_top_stack_b(t_data *data);
 
 // utils functions
-void rotate_min(t_data *data, int min);
-int	ft_is_min(t_data *data); // find min
+void	rotate_min(t_data *data, int min);
+int		ft_is_min(t_data *data);
 
 // sort small stack
 void	sort_2(t_data *data);
 void	sort_3(t_data *data);
 void	sort_4(t_data *data);
 void	sort_5(t_data *data);
-int	sort_small_stack(t_data *data);
+int		sort_small_stack(t_data *data);
 
 // sort big stack
-int	ft_get_max_bits(t_data *data);
+int		ft_get_max_bits(t_data *data);
 void	sort_big_stack(t_data *data);
 
-int	ft_sort(t_data *data);
+int		ft_sort(t_data *data);
 
 void	ft_sort_int_tab(int	*new_temp_stack, int len);
-int	ft_sorted_index(t_data *data);
-int	ft_replace_stack_by_index(t_data *data);
+int		ft_sorted_index(t_data *data);
+int		ft_replace_stack_by_index(t_data *data);
 
-int	ft_init_stack(t_data *data, int argc, char **argv);
-int	ft_check_int_max(char **argv);
-int	ft_check_duplicate(char **argv, int len);
-int	ft_parsing(char **argv, int len);
-
+int		ft_init_stack(t_data *data, int argc, char **argv);
+int		ft_check_int_max(char **argv);
+int		ft_check_duplicate(char **argv, int len);
+int		ft_parsing(char **argv, int len);
 
 #endif

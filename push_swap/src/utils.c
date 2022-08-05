@@ -28,10 +28,10 @@ int	ft_is_min(t_data *data)
 	return (j);
 }
 
-void rotate_min(t_data *data, int min)
+void	rotate_min(t_data *data, int min)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < data->len_a)

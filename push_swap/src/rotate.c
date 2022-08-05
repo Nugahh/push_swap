@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void rotate_ra(int *stack, int size)
+void	rotate_ra(int *stack, int size)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ void rotate_ra(int *stack, int size)
 	ft_putstr_fd("ra\n", 1);
 }
 
-void rotate_rb(int *stack, int size)
+void	rotate_rb(int *stack, int size)
 {
 	int	i;
 

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+/* #include "includes/ft_printf.h"
 #include "libft/libft.h"
 
 int	main()
@@ -109,4 +109,4 @@ int	main()
 		printf("return is ok : [%d,%d]\n\n",ret_my_function, ret_reel_function);
 	else
 		printf("return is not ok : [%d,%d]\n\n", ret_my_function, ret_reel_function);
-}
+} */
