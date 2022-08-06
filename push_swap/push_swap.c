@@ -22,11 +22,11 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!ft_init_stack(&data, argc, argv))
 		return (0);
-	ft_sort(&data);
+	sort_big_stack(&data);
 	while (i < argc - 1)
 	{
 		printf("%d\n", data.stack_a[i]);
 		i++;
 	}
-	return (free(data.stack_a), free(data.stack_b), 0);
+	return (0);
 }
