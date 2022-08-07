@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:04:31 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/05 18:49:32 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/06 19:44:39 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	sort_small_stack(t_data *data)
 		sort_5(data);
 	return (1);
 }
-
+/* 
 int main()
 {
 	t_data truc;
@@ -94,5 +94,5 @@ int main()
 		printf("Stack A: %d\n", truc.stack_a[i]);
 		i++;
 	}
-}
+} */
 

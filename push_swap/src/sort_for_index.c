@@ -41,7 +41,7 @@ int	ft_sorted_index(t_data *data)
 	int	i;
 
 	i = 0;
-	data->temp_stack = malloc(sizeof(int *) * data->len_a);
+	data->temp_stack = malloc(sizeof(int) * data->len_a);
 	if (!data->temp_stack)
 		return (0);
 	while (i < data->len_a)
@@ -50,6 +50,7 @@ int	ft_sorted_index(t_data *data)
 		i++;
 	}
 	ft_sort_int_tab(data->temp_stack, data->len_a);
+	i = 0;
 	return (1);
 }
 
@@ -60,6 +61,7 @@ int	ft_replace_stack_by_index(t_data *data)
 
 	i = 0;
 	ft_sorted_index(data);
+	data->index = malloc(sizeof(int) * data->len_a);
 	while (i < data->len_a)
 	{
 		j = 0;
@@ -69,13 +71,21 @@ int	ft_replace_stack_by_index(t_data *data)
 				data->index[i] = j;
 			j++;
 		}
+		printf("Stack_a[%d] = %d\n", i, data->stack_a[i]);
+		printf("Index[%d] = %d\n", i, data->index[i]);
 		i++;
 	}
-	data->stack_a = data->index;
 	i = 0;
 	while (i < data->len_a)
 	{
-		printf("stack_a[%d] = %d\n", i, data->stack_a[i]);
+		data->stack_a[i] = data->index[i];
+		i++;
+	}
+	// data->stack_a = data->index;
+	i = 0;
+	while (i < data->len_a)
+	{
+		printf("stack_a_index[%d] = %d\n", i, data->stack_a[i]);
 		i++;
 	}
 	return (1);
@@ -85,14 +95,19 @@ int	ft_replace_stack_by_index(t_data *data)
 {
 	t_data truc;
 	int i = 0;
-	truc.len_a = 6;
+	truc.len_a = 11;
 	truc.stack_a = malloc(sizeof(int) * truc.len_a);
-	truc.stack_a[0] = 1;
-	truc.stack_a[1] = 2;
-	truc.stack_a[2] = 4;
-	truc.stack_a[3] = 3;
-	truc.stack_a[4] = 5;
-	truc.stack_a[5] = 6;
+	truc.stack_a[0] = 20;
+	truc.stack_a[1] = 10;
+	truc.stack_a[2] = 30;
+	truc.stack_a[3] = 40;
+	truc.stack_a[4] = 60;
+	truc.stack_a[5] = 50;
+	truc.stack_a[6] = 70;
+	truc.stack_a[7] = 80;
+	truc.stack_a[8] = 90;
+	truc.stack_a[9] = 100;
+	truc.stack_a[10] = 0;
 
 
 	truc.len_b = 0;

@@ -22,7 +22,7 @@ OBJS	= ${SRCS:.c=.o}
 
 CC	= cc
 
-CFLAGS	= -Wall -Werror -Wextra -I./includes
+CFLAGS	= -Wall -Werror -Wextra -I./includes -g
 
 all: ${NAME}
 

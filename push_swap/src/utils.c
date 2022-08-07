@@ -57,7 +57,7 @@ void	rotate_min(t_data *data, int min)
 void	ft_malloc_stack(t_data *data)
 {
 	data->stack_a = malloc(sizeof(int) * (data->len_a));
-	data->stack_b = malloc(sizeof(int) * (data->len_a));
+	data->stack_b = malloc(sizeof(int) * (data->len_b));
 }
 
 void	ft_init_struct(t_data *data)

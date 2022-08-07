@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/05 18:38:59 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/07 18:57:59 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,12 @@ int	ft_parsing(char **argv, int len)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][0] == '-')
+		/* 	if (argv[i][0] == '-')
+				j++; */
+			if ((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-')
 				j++;
-			if (argv[i][j] < '0' || argv[i][j] > '9')
+			else
 				return (0);
-			j++;
 		}
 		i++;
 	}
@@ -90,14 +91,18 @@ int	ft_init_stack(t_data *data, int argc, char **argv)
 	data->stack_a = malloc(sizeof(int) * data->len_a);
 	if (!data->stack_a)
 		return (0);
-	data->stack_b = malloc(sizeof(int) * data->len_b);
+	data->stack_b = malloc(sizeof(int) * data->len_a);
 	if (!data->stack_b)
 		return (0);
+	printf("CACA PARSING\n");
 	while (i < data->len_a)
 	{
+		printf("CACA ATOI\n");
 		data->stack_a[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
+	printf("CACA FIN\n");
+
 	return (1);
 }
 

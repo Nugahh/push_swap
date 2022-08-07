@@ -14,20 +14,17 @@
 
 int	ft_get_max_bits(t_data *data)
 {
-	int	max_bits;
 	int	size;
+	int	max_bits;
 
-	max_bits = 1;
 	size = data->len_a;
-	while (size != 0)
-	{
-		size /= 2;
+	max_bits = 0;
+	while (size >> max_bits != 0)
 		max_bits++;
-	}
 	return (max_bits);
 }
 
-void	sort_big_stack(t_data *data)
+int	sort_big_stack(t_data *data)
 {
 	int	i;
 	int	j;
@@ -36,45 +33,52 @@ void	sort_big_stack(t_data *data)
 
 	i = 0;
 	size = data->len_a;
+	ft_replace_stack_by_index(data);
 	max_bits = ft_get_max_bits(data);
-	// ft_replace_stack_by_index(data);
 	while (i < max_bits)
 	{
-	printf("i: %d\n", i);
-	printf("stack a[0] = %d\n", data->stack_a[0]);
-	printf("stack a[1] = %d\n", data->stack_a[1]);
-	printf("stack a[2] = %d\n\n", data->stack_a[2]);
 		j = 0;
 		while (j < size)
 		{
-			/* printf("Len a = %d\n", data->len_a);
-			printf("Len b = %d\n", data->len_b);
-			printf("stack_a[0] = %d\n", data->stack_a[0]);
-			printf("bit le moins fort =  %d = %d\n", i, data->stack_a[0] >> i);  */
-			if (((data->stack_a[0] >> i) & 1) == 1)
+			if (((data->stack_a[0] >> i) & (1 == 1)))
 				rotate_ra(data->stack_a, data->len_a);
 			else
-				push_b(data);
+			{
+				if (!push_b(data))
+					return (0);
+			}
 			j++;
 		}
-		while (data->len_b != 0)
-			push_a(data);
+		while (data->len_b > 0)
+		{
+			if (!push_a(data))
+				return (0);
+		}
 		i++;
 	}
+	return (1);
 }
 
 /* int main()
 {
 	t_data truc;
 	int i = 0;
-	truc.len_a = 3;
+	truc.len_a = 11;
 	truc.stack_a = malloc(sizeof(int) * truc.len_a);
-	truc.stack_a[0] = 2;
-	truc.stack_a[1] = 1;
-	truc.stack_a[2] = 0;
+	truc.stack_a[0] = 20;
+	truc.stack_a[1] = 10;
+	truc.stack_a[2] = 30;
+	truc.stack_a[3] = 40;
+	truc.stack_a[4] = 60;
+	truc.stack_a[5] = 50;
+	truc.stack_a[6] = 70;
+	truc.stack_a[7] = 80;
+	truc.stack_a[8] = 90;
+	truc.stack_a[9] = 100;
+	truc.stack_a[10] = 0;
 
 	truc.len_b = 0;
-	truc.stack_b = malloc(sizeof(int) * truc.len_a);
+	truc.stack_b = malloc(sizeof(int) * truc.len_b);
 
 	printf("~ Stack A INITIALIZED ~\n\n");
 	while (i < truc.len_a)
