@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	if (!ft_init_stack(&data, argc, argv))
 		return (0);
 	printf("CACAOUI\n");
-	sort_big_stack(&data);
+	ft_sort(&data);
 	printf("CACANON\n");
 	// ft_sorted_index(&data);
 	// ft_replace_stack_by_index(&data);

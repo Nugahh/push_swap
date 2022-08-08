@@ -76,12 +76,8 @@ int	ft_replace_stack_by_index(t_data *data)
 		i++;
 	}
 	i = 0;
-	while (i < data->len_a)
-	{
-		data->stack_a[i] = data->index[i];
-		i++;
-	}
-	// data->stack_a = data->index;
+	// free(data->stack_a);
+	data->stack_a = data->index;
 	i = 0;
 	while (i < data->len_a)
 	{

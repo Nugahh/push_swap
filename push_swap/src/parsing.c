@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/07 18:57:59 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/08 02:47:03 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	ft_check_int_max(char **argv)
 			return (0);
 		i++;
 	}
+	free(ft_itoa(ft_atoi(argv[i])));
 	return (1);
 }
 
