@@ -6,14 +6,14 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/06 20:36:37 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/09 04:43:29 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/ft_printf.h"
+# include "../libft/ft_printf.h"
 
 typedef struct s_data
 {

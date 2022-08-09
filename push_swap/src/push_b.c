@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 // add the top first element of stack_a in top first element of stack_b
 int	ft_add_top_stack_b(t_data *data)
