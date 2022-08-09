@@ -71,8 +71,6 @@ int	ft_replace_stack_by_index(t_data *data)
 				data->index[i] = j;
 			j++;
 		}
-		/* printf("Stack_a[%d] = %d\n", i, data->stack_a[i]);
-		printf("Index[%d] = %d\n", i, data->index[i]); */
 		i++;
 	}
 	i = 0;
