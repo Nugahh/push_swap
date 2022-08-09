@@ -20,19 +20,13 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc <= 1)
 		return (0);
-	printf("CACAOUI\n");
-
 	if (!ft_init_stack(&data, argc, argv))
 		return (0);
-	printf("CACAOUI\n");
-	sort_big_stack(&data);
-	printf("CACANON\n");
-	// ft_sorted_index(&data);
-	// ft_replace_stack_by_index(&data);
+	ft_sort(&data);
 	while (i < argc - 1)
 	{
 		printf("%d\n", data.stack_a[i]);
 		i++;
 	}
-	return (0);
+	return (free(data.stack_a), free(data.stack_b), 0);
 }

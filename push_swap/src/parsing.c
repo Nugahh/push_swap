@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/07 18:57:59 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/09 04:20:53 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 int	ft_check_int_max(char **argv)
 {
 	int	i;
+	char	*str;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_strncmp(argv[i], ft_itoa(ft_atoi(argv[i])), 12) != 0)
-			return (0);
+		str = ft_itoa(ft_atoi(argv[i]));
+		if (ft_strncmp(argv[i], str, 12) != 0)
+			return (free(str), 0);
 		i++;
+		free(str);
 	}
 	return (1);
 }
@@ -45,12 +48,12 @@ int	ft_check_duplicate(char **argv, int len)
 		while (j < len)
 		{
 			if (stack[i] == stack[j])
-				return (0);
+				return (free(stack), 0);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (free(stack), 1);
 }
 
 int	ft_parsing(char **argv, int len)
@@ -64,8 +67,6 @@ int	ft_parsing(char **argv, int len)
 		j = 0;
 		while (argv[i][j])
 		{
-		/* 	if (argv[i][0] == '-')
-				j++; */
 			if ((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-')
 				j++;
 			else
@@ -73,6 +74,7 @@ int	ft_parsing(char **argv, int len)
 		}
 		i++;
 	}
+
 	if (!ft_check_int_max(argv))
 		return (0);
 	if (!ft_check_duplicate(argv, len))
@@ -86,6 +88,7 @@ int	ft_init_stack(t_data *data, int argc, char **argv)
 
 	i = 0;
 	data->len_a = argc - 1;
+	data->len_b = 0;
 	if (!ft_parsing(argv, data->len_a))
 		return (0);
 	data->stack_a = malloc(sizeof(int) * data->len_a);
@@ -94,15 +97,11 @@ int	ft_init_stack(t_data *data, int argc, char **argv)
 	data->stack_b = malloc(sizeof(int) * data->len_a);
 	if (!data->stack_b)
 		return (0);
-	printf("CACA PARSING\n");
 	while (i < data->len_a)
 	{
-		printf("CACA ATOI\n");
 		data->stack_a[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
-	printf("CACA FIN\n");
-
 	return (1);
 }
 
