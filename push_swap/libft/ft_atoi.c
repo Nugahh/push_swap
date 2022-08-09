@@ -34,6 +34,10 @@ int	ft_atoi(const char *str)
 			neg *= -1;
 		i++;
 	}
+	if (str[i] == '0' && str[i + 1] == '\0')
+		return (0);
+	while (str[i] == '0' && str[i + 1] == '0')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = (nb * 10) + str[i] - '0';

@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/09 04:43:29 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/09 17:38:18 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		ft_sorted_index(t_data *data);
 int		ft_replace_stack_by_index(t_data *data);
 
 int		ft_init_stack(t_data *data, int argc, char **argv);
-int		ft_check_int_max(char **argv);
+int		ft_check_int_max(char **argv, int len);
 int		ft_check_duplicate(char **argv, int len);
 int		ft_parsing(char **argv, int len);
 

@@ -12,7 +12,7 @@
 
 NAME	=	push_swap
 
-CC		=	clang
+CC		=	cc
 
 CFLAGS	=	-Wall -Werror -Wextra -MMD -MP -I./includes -g3
 
@@ -45,7 +45,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJS} ./libft/libft.a
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB)
-
+	
 ./libft/libft.a:
 	make $(@F) -C $(@D)
 
