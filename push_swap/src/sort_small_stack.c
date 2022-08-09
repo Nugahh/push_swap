@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:04:31 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/09 04:42:51 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/10 00:42:01 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	sort_3(t_data *data)
 void	sort_4(t_data *data)
 {
 	rotate_min(data, ft_is_min(data));
+	printf("Caca\n");
+
 	push_b(data);
 	sort_3(data);
 	push_a(data);
@@ -54,7 +56,7 @@ int	sort_small_stack(t_data *data)
 		sort_3(data);
 	else if (data->len_a == 4)
 		sort_4(data);
-	else if (data->len_b == 5)
+	else if (data->len_a == 5)
 		sort_5(data);
 	return (1);
 }

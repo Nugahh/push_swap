@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/09 17:47:00 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/09 22:42:16 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@
 
 int	ft_check_int_max(char **argv, int len)
 {
-	long	*stack;
+	long long	*stack;
 	int		i;
 
 	i = 0;
-	stack = malloc(sizeof(long) * len);
+	stack = malloc(sizeof(long long) * len);
 	if (!stack)
 		return (0);
 	while (i < len)
@@ -81,6 +81,8 @@ int	ft_parsing(char **argv, int len)
 	int	j;
 
 	i = 1;
+	if (!ft_check_int_max(argv, len))
+		return (printf("ICI\n"), 0);
 	while (i <= len)
 	{
 		j = 0;
@@ -95,8 +97,6 @@ int	ft_parsing(char **argv, int len)
 		}
 		i++;
 	}
-	if (!ft_check_int_max(argv, len))
-		return (0);
 	if (!ft_check_duplicate(argv, len))
 		return (0);
 	return (1);
@@ -109,8 +109,9 @@ int	ft_init_stack(t_data *data, int argc, char **argv)
 	i = 0;
 	data->len_a = argc - 1;
 	data->len_b = 0;
+	printf("CACA\n");
 	if (!ft_parsing(argv, data->len_a))
-		return (0);
+		return (printf("CACA PRINTF\n"), 0);
 	data->stack_a = malloc(sizeof(int) * data->len_a);
 	if (!data->stack_a)
 		return (0);
@@ -120,6 +121,12 @@ int	ft_init_stack(t_data *data, int argc, char **argv)
 	while (i < data->len_a)
 	{
 		data->stack_a[i] = ft_atoi(argv[i + 1]);
+		i++;
+	}
+	i = 0;
+	while (i < data->len_a)
+	{
+		printf("stack_a[%d] = %d\n", i, data->stack_a[i]);
 		i++;
 	}
 	return (1);
