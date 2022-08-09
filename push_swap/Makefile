@@ -10,57 +10,55 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap.a
+NAME	=	push_swap
 
-SRCS	= 	push_swap.c \
-			src/rotate.c src/swap.c src/reverse_rotate.c src/push_a.c \
-			src/push_b.c src/sort_small_stack.c src/utils.c \
-			src/sort_big_stack.c src/sort_for_index.c src/sort.c \
-			src/parsing.c
+CC		=	clang
 
-OBJS	= ${SRCS:.c=.o}
+CFLAGS	=	-Wall -Werror -Wextra -MMD -MP -I./includes -g3
 
-CC	= cc
+LIB		=	-Llibft/ -lft
 
-CFLAGS	= -Wall -Werror -Wextra -I./includes -g
+SRCS	= 	push_swap.c			\
+			rotate.c			\
+			swap.c				\
+			reverse_rotate.c	\
+			push_a.c			\
+			push_b.c			\
+			sort_small_stack.c	\
+			utils.c				\
+			sort_big_stack.c	\
+			sort_for_index.c	\
+			sort.c				\
+			parsing.c			\
+
+OBJS	:=	${addprefix ./obj/,${SRCS:%.c=%.o}}
+
+DEP		=	$(addprefix ./obj/,$(OBJS:%.o=%.d))
 
 all: ${NAME}
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+-include $(DEP)
 
-${NAME}: ${OBJS}
-	make -C libft
-	
-	cp libft/libft.a .
+./obj/%.o: ./src/%.c
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
-	mv libft.a ${NAME}
-	
-	ar rcs ${NAME} ${OBJS}
+${NAME}: ${OBJS} ./libft/libft.a
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIB)
 
-bonus:	${Bonus_OBJS}
-	ar rcs ${NAME} ${Bonus_OBJS}
+./libft/libft.a:
+	make $(@F) -C $(@D)
 
 clean:
-	rm -f ${OBJS} ${Bonus_OBJS}
-	
-	make clean -C libft
+	rm -rf obj/
+	rm -f ${OBJS}
+	make $@ -C ./libft/
 
-fclean: clean
+fclean: 
+	rm -rf obj/
 	rm -f ${NAME}
+	make $@ -C libft
 
-	make fclean -C libft
-
-test: ${OBJS}
-	make -C libft
-	
-	cp libft/libft.a .
-
-	mv libft.a ${NAME}
-	
-	cc ${NAME} ${OBJS} push_swap.a
-
-re:		fclean all
+re:	fclean all
 
 .PHONY: all clean fclean re
-
