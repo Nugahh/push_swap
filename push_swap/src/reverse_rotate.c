@@ -12,6 +12,8 @@
 
 #include "../includes/push_swap.h"
 
+// shift down all elements of stack a by 1
+// the last element becomes the first one
 void	reverse_rotate_ra(int *stack, int size)
 {
 	while (size - 1 > 0)
@@ -22,6 +24,8 @@ void	reverse_rotate_ra(int *stack, int size)
 	ft_putstr_fd("rra\n", 1);
 }
 
+// shift down all elements of stack b by 1
+// the last element becomes the first one
 void	reverse_rotate_rb(int *stack, int size)
 {
 	while (size - 1 > 0)
@@ -32,6 +36,7 @@ void	reverse_rotate_rb(int *stack, int size)
 	ft_putstr_fd("rrb\n", 1);
 }
 
+// do rra & rrb at the same time
 void	reverse_rotate_rrr(int *ra, int *rb, int size)
 {
 	int	i;

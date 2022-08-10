@@ -11,45 +11,39 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-int	ft_is_space(char c)
+long	ft_atoi(const char *nptr)
 {
-	return ((c >= 9 && c <= 13) || c == 32);
-}
+	int		i;
+	long	res;
+	long	minus;
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	nb;
-	int	neg;
-
-	i = 0;
-	nb = 0;
-	neg = 1;
-	while (ft_is_space(str[i]))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	minus = 1;
+	res = 0;
+	i = -1;
+	while ((*nptr >= 9 && *nptr <= 13) || (*nptr == ' '))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (str[i] == '-')
-			neg *= -1;
-		i++;
+		if (*nptr == '-')
+	minus *= -1;
+		nptr++;
 	}
-	if (str[i] == '0' && str[i + 1] == '\0')
-		return (0);
-	while (str[i] == '0' && str[i + 1] == '0')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + str[i] - '0';
-		i++;
-	}
-	return (nb * neg);
+	while (*nptr == '0')
+		nptr++;
+	while (nptr[++i] && i < 13 && nptr[i] >= '0' && nptr[i] <= '9')
+	res = (res * 10 + (nptr[i] - 48));
+	if (res < INT_MAX && res > INT_MIN)
+		return (res *= minus);
+	else
+		return (2147483648);
 }
 /* 
 int	main()
 {
-	char a[] = "-1234";
-	printf("%d\n", ft_atoi(a));
+	char a[] = "2147483648";
+	printf("%ld\n", ft_atoi(a));
 	printf("%d\n", atoi(a));
 	return (0);
 } */

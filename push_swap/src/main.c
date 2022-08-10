@@ -21,12 +21,5 @@ int	main(int argc, char **argv)
 	if (!ft_init_stack(&data, argc, argv))
 		return (0);
 	ft_sort(&data);
-	printf("Caca\n");
-	int i = 0;
-	while (i < data.len_a)
-	{
-		printf("stack_a[%d]: %d\n", i, data.stack_a[i]);
-		i++;
-	}
 	return (free(data.stack_a), free(data.stack_b), 0);
 }

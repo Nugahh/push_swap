@@ -12,6 +12,8 @@
 
 #include "../includes/push_swap.h"
 
+
+// sort a tab of integer by ascending order
 void	ft_sort_int_tab(int *new_temp_stack, int len)
 {
 	int	tmp;
@@ -36,6 +38,7 @@ void	ft_sort_int_tab(int *new_temp_stack, int len)
 	}
 }
 
+// copy stack_a's values in temp_stack && use ft_sort_int_tab
 int	ft_sorted_index(t_data *data)
 {
 	int	i;
@@ -54,6 +57,7 @@ int	ft_sorted_index(t_data *data)
 	return (1);
 }
 
+// replace stack_a's values with index
 int	ft_replace_stack_by_index(t_data *data)
 {
 	int	i;

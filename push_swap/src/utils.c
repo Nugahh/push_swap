@@ -12,6 +12,7 @@
 
 #include "../includes/push_swap.h"
 
+// return the smallest value
 int	ft_is_min(t_data *data)
 {
 	int	i;
@@ -28,6 +29,7 @@ int	ft_is_min(t_data *data)
 	return (j);
 }
 
+// rotate the smallest value to the top of the stack
 void	rotate_min(t_data *data, int min)
 {
 	int	i;
@@ -52,16 +54,4 @@ void	rotate_min(t_data *data, int min)
 		}
 		i++;
 	}
-}
-
-void	ft_malloc_stack(t_data *data)
-{
-	data->stack_a = malloc(sizeof(int) * (data->len_a));
-	data->stack_b = malloc(sizeof(int) * (data->len_b));
-}
-
-void	ft_init_struct(t_data *data)
-{
-	data->len_a = 0;
-	data->len_b = 0;
 }

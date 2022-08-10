@@ -12,6 +12,8 @@
 
 #include "../includes/push_swap.h"
 
+// shift up all elements of stack a by 1
+// the first element becomes the last one
 void	rotate_ra(int *stack, int size)
 {
 	int	i;
@@ -25,6 +27,8 @@ void	rotate_ra(int *stack, int size)
 	ft_putstr_fd("ra\n", 1);
 }
 
+// shift up all elements of stack b by 1
+// the first element becomes the last one
 void	rotate_rb(int *stack, int size)
 {
 	int	i;

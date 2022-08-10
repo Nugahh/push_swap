@@ -18,18 +18,18 @@ CFLAGS	=	-Wall -Werror -Wextra -MMD -MP -I./includes -g3
 
 LIB		=	-Llibft/ -lft
 
-SRCS	= 	push_swap.c			\
-			rotate.c			\
-			swap.c				\
-			reverse_rotate.c	\
+SRCS	= 	main.c				\
+			parsing.c			\
 			push_a.c			\
 			push_b.c			\
-			sort_small_stack.c	\
-			utils.c				\
+			reverse_rotate.c	\
+			rotate.c			\
 			sort_big_stack.c	\
 			sort_for_index.c	\
+			sort_small_stack.c	\
 			sort.c				\
-			parsing.c			\
+			swap.c				\
+			utils.c				\
 
 OBJS	:=	${addprefix ./obj/,${SRCS:%.c=%.o}}
 
