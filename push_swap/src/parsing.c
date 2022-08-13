@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/10 21:09:12 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/13 03:14:34 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_check_duplicate(char **argv, int len)
 }
 
 // check everything conditions needed for the parsing
-int	ft_parsing(char **argv, int len)
+int	ft_check_parsing(char **argv, int len)
 {
 	int	i;
 	int	j;
@@ -60,7 +60,9 @@ int	ft_parsing(char **argv, int len)
 		j = 0;
 		while (argv[i][j])
 		{
-			if ((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-')
+			if (argv[i][0] == '-' || argv[i][0] == '+')
+				j++;
+			if (argv[i][j] >= '0' && argv[i][j] <= '9')
 				j++;
 			else
 				return (ft_error(), 0);
@@ -82,7 +84,7 @@ int	ft_init_stack(t_data *data, int argc, char **argv)
 	i = 0;
 	data->len_a = argc - 1;
 	data->len_b = 0;
-	if (!ft_parsing(argv, data->len_a))
+	if (!ft_check_parsing(argv, data->len_a))
 		return (0);
 	data->stack_a = malloc(sizeof(int) * data->len_a);
 	if (!data->stack_a)
@@ -107,7 +109,7 @@ int	ft_init_stack(t_data *data, int argc, char **argv)
 	data.len_a = argc - 1;
 	data.stack_a = malloc(sizeof(int) * data.len_a);
 	// printf("Should return 1: %d\n", ft_init_stack(&data, argc, argv));
-	printf("Should return 1: %d\n", ft_parsing(argv, data.len_a));
+	printf("Should return 1: %d\n", ft_check_parsing(argv, data.len_a));
 	while (i < argc - 1)
 	{
 		printf("stack_a[%d] = %d\n", i, data.stack_a[i]);

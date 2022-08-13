@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	if (argc <= 1)
+	if (argc == 1)
 		return (0);
 	if (!ft_init_stack(&data, argc, argv))
 		return (0);

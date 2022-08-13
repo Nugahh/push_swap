@@ -53,7 +53,6 @@ int	ft_sorted_index(t_data *data)
 		i++;
 	}
 	ft_sort_int_tab(data->temp_stack, data->len_a);
-	i = 0;
 	return (1);
 }
 

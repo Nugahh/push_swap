@@ -33,7 +33,7 @@ long	ft_atoi(const char *nptr)
 	while (*nptr == '0')
 		nptr++;
 	while (nptr[++i] && i < 13 && nptr[i] >= '0' && nptr[i] <= '9')
-	res = (res * 10 + (nptr[i] - 48));
+		res = (res * 10 + (nptr[i] - 48));
 	if (res < INT_MAX && res > INT_MIN)
 		return (res *= minus);
 	else
