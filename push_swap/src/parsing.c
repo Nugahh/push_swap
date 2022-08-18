@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/13 03:14:34 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/18 17:38:34 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ int	ft_check_parsing(char **argv, int len)
 	while (i <= len)
 	{
 		j = 0;
+		if (argv[i][0] == '-' || argv[i][0] == '+')
+				j++;
 		while (argv[i][j])
 		{
-			if (argv[i][0] == '-' || argv[i][0] == '+')
-				j++;
 			if (argv[i][j] >= '0' && argv[i][j] <= '9')
 				j++;
 			else
-				return (ft_error(), 0);
+				return (ft_error(), printf("ALLO"), 0);
 		}
-		if (ft_atoi(argv[i]) > INT_MAX)
+		if (ft_atoi(argv[i]) >= 2147483648)
 			return (ft_error(), 0);
 		i++;
 	}

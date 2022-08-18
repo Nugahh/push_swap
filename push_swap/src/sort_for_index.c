@@ -12,7 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-
 // sort a tab of integer by ascending order
 void	ft_sort_int_tab(int *new_temp_stack, int len)
 {
