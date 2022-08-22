@@ -13,6 +13,22 @@
 #include "../includes/push_swap.h"
 
 // add the top first element of stack_a in top first element of stack_b
+/* ====================================== */
+/*     stack_a[0]     temp stack_b[0]     */		
+/*      *=====*         *=====*           */
+/*      *  3  -----------> 3  *           */
+/*      *  2  *         *     *           */
+/*      *  4  *         *     *           */
+/*      *=====*         *=====*           */
+/*                                        */
+/*     stack_b[i]     temp stack_b[i + 1] */
+/*                      *=====*           */
+/*      *=====*	     	*  3  *           */
+/*    i *  7  -----------> 7  * i + 1     */
+/*      *  6            *  6  *           */
+/*      *  5            *  5  *           */
+/*      *=====*         *=====*           */	
+/* ====================================== */
 int	ft_add_top_stack_b(t_data *data)
 {
 	int	*new_stack_b;
@@ -35,6 +51,20 @@ int	ft_add_top_stack_b(t_data *data)
 }
 
 // delete top first element of stack_a
+/* ========================================= */
+/*      stack_a[i + 1]   temp stack_a[0]     */		
+/*       *=====*                             */	
+/*       *  3  *           *=====*           */
+/* i + 1 *  2  -------------> 2  * i         */
+/*       *  4  *           *  4  *           */
+/*       *=====*           *=====*           */
+/*                                           */
+/*    temp stack_a[]       stack_a[]         */
+/*       *=====*           *=====*           */
+/*       *  2  -------------> 2  *           */
+/*       *  4  *           *  4  *           */
+/*       *=====*           *=====*           */	
+/* ========================================= */
 int	ft_delete_top_stack_a(t_data *data)
 {
 	int		*new_stack_a;
