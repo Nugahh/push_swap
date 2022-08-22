@@ -6,13 +6,13 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 20:01:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/22 19:42:10 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/22 23:43:46 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// add the top first element of stack_b in first top element of stack_a
+// add the top first element of stack_b in top first element of stack_a
 /* ====================================== */
 /*     stack_b[0]     temp stack_a[0]     */		
 /*      *=====*         *=====*           */
