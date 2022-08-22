@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/22 19:00:48 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/22 19:04:04 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_check_duplicate(char **argv, int len)
 	return (free(stack), 1);
 }
 
-// check everything conditions needed for the parsing
+// check every conditions needed for the parsing
 int	ft_check_parsing(char **argv, int len)
 {
 	int	i;
