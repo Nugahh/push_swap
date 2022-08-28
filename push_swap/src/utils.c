@@ -12,6 +12,13 @@
 
 #include "../includes/push_swap.h"
 
+// print "Error"
+int	ft_error(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	return (0);
+}
+
 // return the smallest value
 int	ft_is_min(t_data *data)
 {
@@ -54,4 +61,20 @@ void	rotate_min(t_data *data, int min)
 		}
 		i++;
 	}
+}
+
+// check if stack is sorted
+int	ft_is_sorted(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	//printf("len = %d\n", data->len_a);
+	while (i < data->len_a - 1)
+	{			
+		if (data->stack_a[i] > data->stack_a[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }

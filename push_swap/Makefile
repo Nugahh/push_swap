@@ -12,7 +12,7 @@
 
 NAME	=	push_swap
 
-CC		=	cc
+CC		=	clang
 
 CFLAGS	=	-Wall -Werror -Wextra -MMD -MP -I./includes -g3
 

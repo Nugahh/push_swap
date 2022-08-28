@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 15:22:50 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/13 03:14:34 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/28 17:34:13 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int		ft_delete_top_stack_b(t_data *data);
 // utils functions
 void	rotate_min(t_data *data, int min);
 int		ft_is_min(t_data *data);
+int		ft_is_sorted(t_data *data);
+int		ft_error(void);
 
 // sort small stack
 void	sort_2(t_data *data);

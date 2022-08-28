@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 14:04:31 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/10 21:12:43 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/28 17:46:27 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	sort_3(t_data *data)
 void	sort_4(t_data *data)
 {
 	rotate_min(data, ft_is_min(data));
+	if (ft_is_sorted(data) == 1)
+		return ;
 	push_b(data);
 	sort_3(data);
 	push_a(data);
@@ -41,6 +43,8 @@ void	sort_4(t_data *data)
 void	sort_5(t_data *data)
 {
 	rotate_min(data, ft_is_min(data));
+	if (ft_is_sorted(data) == 1)
+		return ;
 	push_b(data);
 	sort_4(data);
 	push_a(data);

@@ -6,19 +6,12 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 23:47:07 by fwong             #+#    #+#             */
-/*   Updated: 2022/08/22 19:04:04 by fwong            ###   ########.fr       */
+/*   Updated: 2022/08/28 18:16:26 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <limits.h>
-
-// print "Error"
-int	ft_error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	return (0);
-}
 
 // check if there is a duplicate in our string
 int	ft_check_duplicate(char **argv, int len)
