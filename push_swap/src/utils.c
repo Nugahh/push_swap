@@ -69,7 +69,6 @@ int	ft_is_sorted(t_data *data)
 	int	i;
 
 	i = 0;
-	//printf("len = %d\n", data->len_a);
 	while (i < data->len_a - 1)
 	{			
 		if (data->stack_a[i] > data->stack_a[i + 1])

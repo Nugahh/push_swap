@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	if (!ft_init_stack(&data, argc, argv))
-		return (0);	
+		return (0);
 	if (!ft_is_sorted(&data))
 		ft_sort(&data);
 	return (free(data.stack_a), free(data.stack_b), 0);
