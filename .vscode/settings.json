@@ -1,7 +1,0 @@
-{
-	"files.associations": {
-		"ft_printf.h": "c",
-		"push_swap.h": "c",
-		"limits": "c"
-	}
-}
